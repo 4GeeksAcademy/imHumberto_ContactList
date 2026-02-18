@@ -9,6 +9,22 @@ export const Contact = () => {
 
   function createContact() {
     console.log("create contact")
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        "name": name,
+        "address": address,
+        "phone": phone,
+        "email": email
+      })
+    }
+
+    fetch ('https://playground.4geeks.com/contact/agendas/humberto/contacts', requestOptions)
+    .then ((response) => response.json() )
+    .then ( (data) => console.log(data) )
+
   }
 
   return (

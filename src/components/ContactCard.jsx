@@ -3,8 +3,8 @@ import React from "react";
 const ContactCard = ({ contact, onDelete }) => {
     return (
         <li className="list-group-item d-flex gap-3 mx-5">
-            <div>
-                <img className="rounded-circle" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width: '100px'}}/> 
+            <div className="d-flex align-items-center">
+                <img className="rounded-circle" src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=3731&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width: '100px', height: '100px', objectFit: 'cover'}}/> 
             </div>
             <div className="flex-grow-1">
                 <p className="fs-3 mb-2"> {contact.name}</p>

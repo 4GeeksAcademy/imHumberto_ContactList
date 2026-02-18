@@ -42,7 +42,6 @@ export const Home = () => {
 
 	return (
 		<div className="mt-5">
-			{/*LISTA DE CONTACTOS*/}
 			<ul className="list-group">
 					{/* Map over the 'todos' array from the store and render each item as a list element */}
 					{store && store.contactos?.map((item) => {
