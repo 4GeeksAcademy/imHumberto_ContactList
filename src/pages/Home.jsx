@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import ContactCard from "../components/ContactCard";
 
 
 export const Home = () => {
@@ -46,19 +47,7 @@ export const Home = () => {
 					{/* Map over the 'todos' array from the store and render each item as a list element */}
 					{store && store.contactos?.map((item) => {
 					  return (
-						<li
-						  key={item.id}  // React key for list items.
-						  className="list-group-item d-flex justify-content-between"
-						  style={{ background: item.background }}> 
-						  
-						  <div>
-							<p>Name: {item.name}</p>
-							<p>Phone: {item.phone}</p>
-							<p>Email: {item.email}</p>
-						  </div>
-						  <button onClick={ () => deleteContact(item.id)}>Eliminar</button>
-			
-						</li>
+						<ContactCard key={item.id} contact={item} onDelete={deleteContact} />
 					  );
 					})}
 			</ul>
