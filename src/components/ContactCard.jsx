@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ContactCard = ({ contact, onDelete }) => {
+const ContactCard = ({ contact, onDelete, onEdit }) => {
     return (
         <li className="list-group-item d-flex gap-3 mx-5">
             <div className="d-flex align-items-center">
@@ -12,8 +13,12 @@ const ContactCard = ({ contact, onDelete }) => {
                 <p className="mb-1 text-secondary"><i className="bi bi-telephone-fill"></i> {contact.phone}</p>
                 <p className="mb-1 text-secondary"><i className="bi bi-envelope-fill"></i> {contact.email}</p>
             </div>
-            <button className="btn p-0" onClick={() => onDelete(contact.id)}><i className="bi bi-trash-fill"></i></button>
-            <button className="btn p-0"><i className="bi bi-pen-fill"></i></button>
+            <div className="d-flex align-items-start gap-3">
+                <Link to={`/edit/${contact.id}`}>
+                    <button className="btn p-0" onClick={ ()=> {onEdit(contact.id)} } ><i className="bi bi-pencil-fill"></i></button>
+                </Link>
+                <button className="btn p-0" onClick={() => onDelete(contact.id)}><i className="bi bi-trash-fill"></i></button>
+            </div>
         </li>
     )
 }

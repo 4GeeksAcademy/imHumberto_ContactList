@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export const Contact = () => {
   const [name, setName] = useState("")
+  const [address, setAddress] = useState("")
   const [phone, setPhone] = useState("")
   const [email, setEmail] = useState("")
-  const [address, setAddress] = useState("")
 
   function createContact() {
     console.log("create contact")
@@ -25,12 +25,22 @@ export const Contact = () => {
     .then ((response) => response.json() )
     .then ( (data) => console.log(data) )
 
+    setName ("")
+    setAddress ("")
+    setPhone ("")
+    setEmail ("")
+
   }
+
 
   return (
     <div className="d-flex justify-content-center">
       <div className="card m-5 col-4">
         <div className="card-body">
+          
+          <div className="text-center mb-3">
+            <h2 className="display-6 text-secondary">Create new contact</h2>
+          </div>
 
           <div className="mb-3">
             <label className="form-label">Name</label>

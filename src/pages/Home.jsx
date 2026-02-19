@@ -40,17 +40,25 @@ export const Home = () => {
 
   }
 
+  function editContact (idToEdit) {
+    console.log("editContact" + idToEdit)
+  }
+
 	return (
-		<div className="mt-5">
-			<ul className="list-group">
-					{/* Map over the 'todos' array from the store and render each item as a list element */}
-					{store && store.contactos?.map((item) => {
-					  return (
-						<ContactCard key={item.id} contact={item} onDelete={deleteContact} />
-					  );
-					})}
-			</ul>
-		<br />
+		<div className="d-flex justify-content-center">
+			<div className="mt-5 col-6">
+
+				<ul className="list-group">
+						{/* Map over the 'todos' array from the store and render each item as a list element */}
+						{store && store.contactos?.map((item) => {
+						return (
+							<ContactCard key={item.id} contact={item} onDelete={deleteContact} onEdit={ editContact }/>
+						);
+						})}
+				</ul>
+				<br />
+
+			</div>
 		</div>
 	);
 }; 
